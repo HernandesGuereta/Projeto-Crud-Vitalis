@@ -14,8 +14,6 @@ Sistema CRUD desenvolvido para o projeto Vitalis, com foco no gerenciamento de m
 
 - React
 - Node.js
-- Express
-- MySQL
 
 ## 🎯 Objetivo
 
