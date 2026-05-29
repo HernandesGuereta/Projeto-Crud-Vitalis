@@ -8,7 +8,7 @@ function Menu() {
         </div>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/gestao-estoque">Gestão de Estoque</a></li>
+          <li><a href="/estoque">Gestão de Estoque</a></li>
         </ul>
        </nav>
     )

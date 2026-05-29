@@ -18,7 +18,7 @@ function Home() {
                         <p>Faça ajustes e correções no estoque de sangue conforme necessário.</p>
                     </div>
                 </div>
-                <button className="botao"><a href="">Ir para a Gestão de Estoque →</a></button>
+                <button className="botao"><a href="/Estoque">Ir para a Gestão de Estoque →</a></button>
             </div>
         </div>
     )
