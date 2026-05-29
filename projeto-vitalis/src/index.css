@@ -7,16 +7,19 @@
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
 }
-/* HOME */
+
+/* ===================== NAV ===================== */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 16px 20px;
   background-color: #b91c1c;
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
@@ -25,32 +28,46 @@ nav {
 }
 
 .nome {
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 32px);
   font-weight: bold;
   color: white;
   line-height: 1;
 }
 
 .subtitulo {
-  font-size: 14px;
+  font-size: clamp(11px, 2vw, 14px);
   color: #fdc8c8;
   margin-left: 35px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: right;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  gap: 4px;
 }
+
 nav ul li {
-    margin: 0 8px;
+  margin: 0;
 }
+
 nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 5px;
+  background-color: transparent;
+  display: block;
+  transition: background-color 0.3s ease;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+nav ul li a:hover {
+  background-color: #000000;
 }
 
 a {
@@ -62,8 +79,13 @@ a {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-nav ul li a:hover {
-  background-color: #000000;
+
+/* ===================== HOME ===================== */
+body {
+  background-color: #f8f3f3;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
 }
 
 .home {
@@ -71,40 +93,43 @@ nav ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f8fafc;
+  padding: 20px;
 }
 
 .home-content {
-  margin-bottom: 180px;
-  width: 50%;
-  height: 50%;
-  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 30px;
+  padding: 30px;
   background-color: #f0eeee;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-content-p {
-  font-size: 18px;
+  font-size: clamp(15px, 2.5vw, 18px);
   color: #ff0202;
   line-height: 1.6;
 }
 
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   width: 100%;
-  height: 65%;
-  padding: 20px;
+  max-width: 1000px;
+  padding: 10px 20px 20px;
   gap: 20px;
 }
 
 .reg-entrada-card,
 .reg-saida-card,
 .edit-card {
-  width: 45%;
+  flex: 1 1 260px;
+  max-width: 400px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -117,10 +142,11 @@ nav ul li a:hover {
 
 .reg-entrada-card h2,
 .reg-saida-card h2,
-.edit-card h2{
-  font-size: 24px;
+.edit-card h2 {
+  font-size: clamp(18px, 3vw, 24px);
   color: #b91c1c;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .botao {
@@ -133,52 +159,19 @@ nav ul li a:hover {
   font-weight: bold;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  border: none;
+  font-size: 15px;
 }
 
-.estoque-form-linha-dupla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.botao:hover {
+  background-color: #991b1b;
 }
 
-.estoque-form-campo {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #e5cfcf;
-  border-radius: 10px;
-}
-
-.estoque-form-tipo-container {
-  display: flex;
-  gap: 15px;
-}
-
-.estoque-form-tipo-botao {
-  flex: 1;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: white;
-}
-
-.ativo {
-  background: #eaf8ef;
-  border: 1px solid #22c55e;
-  color: #16a34a;
-}
-
-/* FUNDO GERAL */
-body {
-  background-color: #f8f3f3;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
-}
-
+/* ===================== ESTOQUE LIST ===================== */
 .estoque-list-container {
   max-width: 1100px;
   margin: 30px auto;
-  padding: 25px;
+  padding: 20px 25px;
 }
 
 .estoque-list-cabecalho {
@@ -186,10 +179,12 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .estoque-list-titulo {
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 32px);
   color: #3b0a0a;
   margin: 0;
 }
@@ -203,6 +198,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 .estoque-list-botao-nova-movimentacao:hover {
@@ -210,16 +207,15 @@ body {
   transform: translateY(-2px);
 }
 
-/* CARDS */
-
+/* ===================== CARDS ESTOQUE ===================== */
 .estoque-list-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
 }
 
 .estoque-list-card {
-  flex: 1;
   background-color: white;
   border-radius: 16px;
   padding: 22px;
@@ -241,20 +237,19 @@ body {
 
 .estoque-list-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   color: #555;
 }
 
 .estoque-list-card p {
   margin: 10px 0 0;
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 32px);
   font-weight: bold;
 }
 
-/* TABELA */
-
+/* ===================== TABELA ===================== */
 .estoque-list-subtitulo {
-  font-size: 22px;
+  font-size: clamp(17px, 3vw, 22px);
   margin-bottom: 15px;
   color: #3b0a0a;
 }
@@ -265,10 +260,12 @@ body {
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .estoque-list-tabela {
   width: 100%;
+  min-width: 500px;
   border-collapse: collapse;
 }
 
@@ -276,13 +273,15 @@ body {
   background-color: #f3e8e8;
   color: #7f1d1d;
   text-align: left;
-  padding: 14px;
-  font-size: 14px;
+  padding: 12px 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  white-space: nowrap;
 }
 
 .estoque-list-tabela td {
-  padding: 14px;
+  padding: 12px 14px;
   border-bottom: 1px solid #eee;
+  font-size: clamp(13px, 1.8vw, 15px);
 }
 
 .estoque-list-tabela tr:hover {
@@ -293,34 +292,35 @@ body {
   background-color: #f59e0b;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border-radius: 8px;
   cursor: pointer;
-  margin-right: 8px;
+  margin-right: 6px;
+  font-size: 13px;
 }
 
 .estoque-list-botao-excluir {
   background-color: #dc2626;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 13px;
 }
 
-/* ESTOQUE FORM */
-
+/* ===================== ESTOQUE FORM ===================== */
 .estoque-form-container {
   max-width: 850px;
   margin: 30px auto;
-  padding: 35px;
+  padding: 30px 35px;
   background-color: white;
   border-radius: 18px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
 }
 
 .estoque-form-titulo {
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 32px);
   color: #3b0a0a;
   margin-bottom: 8px;
 }
@@ -328,6 +328,7 @@ body {
 .estoque-form-subtitulo {
   color: #777;
   margin-bottom: 30px;
+  font-size: clamp(13px, 2vw, 15px);
 }
 
 .estoque-formulario {
@@ -340,17 +341,19 @@ body {
   font-weight: bold;
   color: #555;
   font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
 }
 
-/* BOTÕES ENTRADA / SAÍDA */
-
+/* ===================== BOTÕES ENTRADA/SAÍDA ===================== */
 .estoque-form-tipo-container {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .estoque-form-tipo-botao {
-  flex: 1;
+  flex: 1 1 140px;
   padding: 14px;
   border-radius: 12px;
   border: 1px solid #ddd;
@@ -359,13 +362,13 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 .estoque-form-tipo-botao:hover {
   background-color: #f3f3f3;
 }
 
-/* ENTRADA ATIVA - VERDE */
 .estoque-form-tipo-entrada-ativo {
   background-color: #16a34a;
   color: white;
@@ -378,7 +381,6 @@ body {
   border-color: #15803d;
 }
 
-/* SAÍDA ATIVA - AMARELO */
 .estoque-form-tipo-saida-ativo {
   background-color: #facc15;
   color: #3b2f00;
@@ -391,8 +393,13 @@ body {
   border-color: #eab308;
 }
 
-/* CAMPOS DO FORM */
+.ativo {
+  background: #eaf8ef;
+  border: 1px solid #22c55e;
+  color: #16a34a;
+}
 
+/* ===================== CAMPOS DO FORM ===================== */
 .estoque-form-linha-dupla {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -419,12 +426,11 @@ textarea.estoque-form-campo {
   resize: vertical;
 }
 
-/* BOTÕES DO FORM */
-
 .estoque-form-acoes-container {
   display: flex;
   gap: 15px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .estoque-form-botao-confirmar {
@@ -436,6 +442,9 @@ textarea.estoque-form-campo {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  flex: 1 1 auto;
+  min-width: 140px;
+  font-size: 15px;
 }
 
 .estoque-form-botao-confirmar:hover {
@@ -451,50 +460,167 @@ textarea.estoque-form-campo {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  flex: 1 1 auto;
+  min-width: 140px;
+  font-size: 15px;
 }
 
 .estoque-form-botao-cancelar:hover {
   background-color: #f3f3f3;
 }
 
-/* RESPONSIVO */
+/* ===================== TABLET (max 1024px) ===================== */
+@media (max-width: 1024px) {
+  .estoque-list-container {
+    padding: 20px 18px;
+  }
 
+  .estoque-form-container {
+    margin: 20px 16px;
+    padding: 25px 22px;
+  }
+
+  .home-content {
+    width: 85%;
+  }
+}
+
+/* ===================== MOBILE (max 768px) ===================== */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
   }
 
   nav ul {
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .subtitulo {
+    margin-left: 0;
+  }
+
+  .home {
+    justify-content: flex-start;
+    padding: 30px 16px;
+  }
+
+  .home-content {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 22px 18px;
   }
 
   .cards {
     flex-direction: column;
+    padding: 0;
+    gap: 16px;
   }
 
   .reg-entrada-card,
   .reg-saida-card,
   .edit-card {
     width: 100%;
+    max-width: 100%;
+    min-height: auto;
   }
 
   .estoque-list-cabecalho {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 12px;
+  }
+
+  .estoque-list-botao-nova-movimentacao {
+    width: 100%;
+    text-align: center;
   }
 
   .estoque-list-cards {
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
   .estoque-form-linha-dupla {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .estoque-form-acoes-container {
     flex-direction: column;
+  }
+
+  .estoque-form-botao-confirmar,
+  .estoque-form-botao-cancelar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .estoque-form-container {
+    margin: 16px 12px;
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .estoque-list-tabela th,
+  .estoque-list-tabela td {
+    padding: 10px 10px;
+  }
+}
+
+/* ===================== MOBILE PEQUENO (max 480px) ===================== */
+@media (max-width: 480px) {
+  nav {
+    padding: 12px 14px;
+  }
+
+  .nome {
+    font-size: 22px;
+  }
+
+  nav ul {
+    gap: 2px;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .estoque-list-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .estoque-list-card {
+    padding: 16px;
+  }
+
+  .estoque-form-tipo-botao {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .estoque-list-tabela-container {
+    padding: 12px 8px;
+    border-radius: 12px;
+  }
+
+  .estoque-form-campo {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .estoque-form-botao-confirmar,
+  .estoque-form-botao-cancelar {
+    padding: 13px 18px;
+    font-size: 14px;
   }
 }
