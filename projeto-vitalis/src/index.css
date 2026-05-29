@@ -8,7 +8,7 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-/* ===================== NAV ===================== */
+/*NAV*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -80,7 +80,7 @@ a {
   transition: background-color 0.3s ease;
 }
 
-/* ===================== HOME ===================== */
+/*HOME*/
 body {
   background-color: #f8f3f3;
   margin: 0;
@@ -167,7 +167,7 @@ body {
   background-color: #991b1b;
 }
 
-/* ===================== ESTOQUE LIST ===================== */
+/*ESTOQUE LIST*/
 .estoque-list-container {
   max-width: 1100px;
   margin: 30px auto;
@@ -207,7 +207,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===================== CARDS ESTOQUE ===================== */
+/*CARDS ESTOQUE*/
 .estoque-list-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -247,7 +247,7 @@ body {
   font-weight: bold;
 }
 
-/* ===================== TABELA ===================== */
+/*TABELA*/
 .estoque-list-subtitulo {
   font-size: clamp(17px, 3vw, 22px);
   margin-bottom: 15px;
@@ -309,7 +309,7 @@ body {
   font-size: 13px;
 }
 
-/* ===================== ESTOQUE FORM ===================== */
+/*ESTOQUE FORM*/
 .estoque-form-container {
   max-width: 850px;
   margin: 30px auto;
@@ -345,7 +345,7 @@ body {
   display: block;
 }
 
-/* ===================== BOTÕES ENTRADA/SAÍDA ===================== */
+/*BOTÕES ENTRADA/SAÍDA*/
 .estoque-form-tipo-container {
   display: flex;
   gap: 15px;
@@ -399,7 +399,7 @@ body {
   color: #16a34a;
 }
 
-/* ===================== CAMPOS DO FORM ===================== */
+/*CAMPOS DO FORM*/
 .estoque-form-linha-dupla {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -469,7 +469,7 @@ textarea.estoque-form-campo {
   background-color: #f3f3f3;
 }
 
-/* ===================== TABLET (max 1024px) ===================== */
+/*responsividade */
 @media (max-width: 1024px) {
   .estoque-list-container {
     padding: 20px 18px;
@@ -485,7 +485,7 @@ textarea.estoque-form-campo {
   }
 }
 
-/* ===================== MOBILE (max 768px) ===================== */
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -576,7 +576,6 @@ textarea.estoque-form-campo {
   }
 }
 
-/* ===================== MOBILE PEQUENO (max 480px) ===================== */
 @media (max-width: 480px) {
   nav {
     padding: 12px 14px;
